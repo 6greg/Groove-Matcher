@@ -1,6 +1,5 @@
 # Audio (troppo pesante per il repo: resta solo sul disco)
 *.wav
-*.mid
 
 # Python
 __pycache__/
