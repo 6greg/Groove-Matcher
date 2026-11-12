@@ -17,7 +17,7 @@ drums_dir = project_root / "data" / "train" / "drums"
 model_dir = project_root / "data" / "model"
 
 arrangements_types = ["bass", "harm", "full", "full_no_bass"]
-top_k = 100
+top_k = 5
 
 # parametri griglia e audio
 bars = 8
