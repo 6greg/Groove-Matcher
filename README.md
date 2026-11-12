@@ -22,15 +22,13 @@ plugin/      app Gradio (gui.py) e logica di matching (groove_matcher.py)
 source/      cca.py: preprocessing, fit della CCA, correlazione canonica
 notebooks/   pipeline di ricerca (vedi sotto)
 data/
-  train/     70 batterie MIDI + arrangiamenti audio di addestramento (non versionati)
-  test/      17 batterie MIDI + arrangiamenti audio di test (non versionati)
+  train/     70 batterie MIDI + arrangiamenti audio di addestramento 
+  test/      17 batterie MIDI + arrangiamenti audio di test 
   model/     modelli CCA addestrati (.joblib), uno per tipo di arrangiamento
   results/   tensori (.npz), risultati dei test (.parquet), grafici (.pdf)
 ```
 
-I file audio `.wav` (circa 790 MB) e i MIDI delle batterie (`.mid`) **non sono nel repository**: restano solo in locale. Sono invece inclusi i tensori già estratti (`data/results/tensors/`) e i modelli già addestrati (`data/model/`).
-
-L'app ha bisogno dei MIDI in `data/train/drums/` per restituire i file delle batterie suggerite, quindi vanno copiati a mano in quella cartella dopo aver clonato il repository.
+I file audio `.wav` (circa 790 MB) **non sono nel repository**: restano solo in locale, perché troppo pesanti per GitHub. Sono invece inclusi i MIDI delle batterie (`data/train/drums/`, `data/test/drums/`), i tensori già estratti (`data/results/tensors/`) e i modelli già addestrati (`data/model/`). L'app funziona quindi anche senza gli audio di training; gli `.wav` servono solo per rieseguire `extract_vectors.ipynb`.
 
 ## Tipi di arrangiamento
 
@@ -76,7 +74,7 @@ I notebook si eseguono da `notebooks/` e vanno lanciati in quest'ordine:
 
 | Notebook | Cosa fa |
 |---|---|
-| `extract_vectors.ipynb` | estrae le feature da audio e MIDI e salva i tensori in `data/results/tensors/` (richiede gli `.wav` e i `.mid`) |
+| `extract_vectors.ipynb` | estrae le feature da audio e MIDI e salva i tensori in `data/results/tensors/` (richiede gli `.wav`) |
 | `train_cca.ipynb` | addestra un modello CCA per tipo di arrangiamento e li salva in `data/model/` |
 | `permutation_test.ipynb` | test di permutazione sul train (5000 permutazioni, seed 6) |
 | `test_cca.ipynb` | test di permutazione sul set di test con i modelli già addestrati |
