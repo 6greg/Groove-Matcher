@@ -1,0 +1,18 @@
+# Audio (troppo pesante per il repo: resta solo sul disco)
+*.wav
+*.mid
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Gradio (cache e certificato locale)
+.gradio/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
