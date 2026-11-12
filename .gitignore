@@ -16,3 +16,7 @@ venv/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Backup di draw.io
+*.drawio.bkp
+.$*
